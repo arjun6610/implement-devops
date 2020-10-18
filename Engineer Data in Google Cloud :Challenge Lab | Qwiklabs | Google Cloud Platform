@@ -27,7 +27,6 @@ WHERE
   AND passenger_count > 0
 
 
-
 CREATE OR REPLACE MODEL taxirides.fare_model
 TRANSFORM(
   * EXCEPT(pickup_datetime)
@@ -40,8 +39,6 @@ OPTIONS(input_label_cols=['fare_amount'], model_type='linear_reg')
 AS
 
 SELECT * FROM taxirides.taxi_training_data
-
-
 
 
 CREATE OR REPLACE TABLE taxirides.2015_fare_amount_predictions
